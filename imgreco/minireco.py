@@ -104,7 +104,7 @@ class MiniRecognizer:
         charimgs = split_chars(image, split_threshold)
         if charimgs:
             matches = [self.recognize_char(charimg, subset) for charimg in charimgs]
-            return ''.join(x[0] for x in matches), min(x[1] for x in matches)
+            return ''.join(x[0] for x in matches if x[1] > -10000), min(x[1] for x in matches)
         else:
             return '', 1
 

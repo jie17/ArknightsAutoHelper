@@ -14,7 +14,7 @@ logger = get_logger(__name__)
 
 @lru_cache(1)
 def load_data():
-    reco = minireco.MiniRecognizer(resources.load_pickle('minireco/NotoSansCJKsc-Medium.dat'))
+    reco = minireco.MiniRecognizer(resources.load_pickle('minireco/HiraKakuProN-W3.dat'))
     reco2 = minireco.MiniRecognizer(resources.load_pickle('minireco/Novecentosanswide_Medium.dat'))
     return (reco, reco2)
 
