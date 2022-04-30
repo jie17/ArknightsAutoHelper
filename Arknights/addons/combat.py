@@ -294,8 +294,8 @@ class CombatAddon(AddonBase):
                 smobj.state = on_level_up_popup
                 return
 
-                    screenshot = self.device.screenshot()
-                    end_flag = imgreco.end_operation.check_end_operation_legacy(screenshot)
+            screenshot = self.device.screenshot()
+            end_flag = imgreco.end_operation.check_end_operation_legacy(screenshot)
             if end_flag:
                 self.logger.info('战斗结束')
                 self.operation_time.append(t)
