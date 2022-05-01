@@ -25,7 +25,7 @@ def load():
         img = resources.load_image(index, 'RGB')
         _update_mat_collection(resources_itemmats, name, img)
 
-    model = resources.load_pickle('minireco/NotoSansCJKsc-DemiLight-nums.dat')
+    model = resources.load_pickle('minireco/HiraKakuProN-W3.dat')
     reco = minireco.MiniRecognizer(model, minireco.compare_ccoeff)
     num_recognizer=reco
 

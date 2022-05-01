@@ -151,7 +151,8 @@ def all_known_items():
 def get_quantity(itemimg):
     richlogger = get_logger(__name__)
     numimg = imgops.scalecrop(itemimg, 0.39, 0.71, 0.82, 0.855).convert('L')
-    numimg = imgops.crop_blackedge2(numimg, 120)
+    richlogger.logimage(numimg)
+    numimg = imgops.crop_blackedge2(numimg, 120, 10)
     if numimg is not None:
         numimg = imgops.clear_background(numimg, 120)
         numimg4legacy = numimg
