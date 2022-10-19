@@ -294,8 +294,12 @@ class CombatAddon(AddonBase):
                 smobj.state = on_level_up_popup
                 return
 
-            screenshot = self.device.screenshot()
-            end_flag = imgreco.end_operation.check_end_operation_legacy(screenshot)
+            end_flag = imgreco.end_operation.check_end_operation(smobj.prepare_reco['style'], not smobj.prepare_reco['no_friendship'], screenshot)
+            if not end_flag and t > 300:
+                if imgreco.end_operation.check_end_operation2(screenshot):
+                    self.tap_rect(imgreco.end_operation.get_end2_rect(screenshot))
+                    screenshot = self.device.screenshot()
+                    end_flag = imgreco.end_operation.check_end_operation_legacy(screenshot)
             if end_flag:
                 self.logger.info('战斗结束')
                 self.operation_time.append(t)

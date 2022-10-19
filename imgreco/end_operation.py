@@ -262,7 +262,7 @@ get_dismiss_end_operation_rect = get_dismiss_level_up_popup_rect
 
 def recognize(style, im, learn_unrecognized_item=False):
     if style == 'legacy':
-        return recognize_legacy(im, learn_unrecognized_item)
+        return recognize_20220414(im, learn_unrecognized_item)
     elif style == '20220414':
         return recognize_20220414(im, learn_unrecognized_item)
     elif style == 'interlocking':
